@@ -1,0 +1,14 @@
+name: Do the hello world test
+on: [push]
+jobs:
+    build_nodejs_related_things:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@master
+                with:
+                    ref: refs/heads/master
+            -   uses: actions/setup-node@v1
+                with:
+                    node-version: 12.x
+            -   name: run the hello world test
+                run: echo "hello world!"
